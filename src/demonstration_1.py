@@ -39,3 +39,37 @@ complexity.*
 def find_rotation_point(surnames):
     # Your code here
 
+    # UNDERSTAND
+    #[6,7, 8,15,30,0,1,2,3,4,5]
+    # min:  mid:    max:
+    min = 0
+    max = len(surnames) - 1
+    mid = (min + max) // 2
+    # PLAN
+    # We should use some kind of a binary search
+    
+    # max and min indices
+    # find the middle index
+    # if the middle surname is the rotation point: (base case)
+        # middle surname is rotation if prev element is > then current
+        # return the index
+    # otherwise
+    # have we rotated yet?
+    # we can tell that by comparing to the first element in the array
+    first_element = surnames[0]
+    while not max <= min
+    current_element = surnames[mid]
+    # If current element > first element: we haven't rotated yet, rotation point is "still ahead of us"
+        if current_element >= first_element:
+        # search right
+        # move the min index to middle + 1
+        min = mid + 1
+    # else if current element < first element: we have rotated
+        else:
+        # current element < first element
+            max = mid
+        # search left:
+        # move the max index to the middle index - 1
+    return min
+    
+

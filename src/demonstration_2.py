@@ -26,4 +26,28 @@ containsTypo(4) -> True
 """
 def firstDraftWithTypo(n):
     # Your code here
+    #[draft1, draft2, draft3, ... draftn-1, draft n]
+
+    # If we find a draft with the typo, the first draft with the typo (target) is before the current draft
+    # If current draft does not have the typo, the first drag w/ the typo is after the current draft
+    min = 0
+    max = n
+
+    while not max <= min:  
+        guess = min + max // 2
+        contains_typo = contains_typo(guess)
+
+        if contains_typo:
+            # The first draft w/ the typo is before our guess
+            # look left
+            # we could check if its the first one by calling containsTypo (guess - 1)
+            # move max to the guess value
+            max = guess
+        else:
+            # look right
+            # move min to guess + 1
+            min = guess + 1
+        # repeat
+    return min
+
 
